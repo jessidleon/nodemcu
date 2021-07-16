@@ -34,7 +34,7 @@ local function do_job()
 				continue_execution = false
 			end
 		end)
-			else
+	else
 		print("delete_pin is released")
 	end
 
@@ -44,6 +44,8 @@ local function do_job()
 			is_pushed = test_pin(do_not_execute_pin)
 			if is_pushed then
 				gpio.write(led_pin, gpio.LOW)
+				dofile("led.lua").loop_blink(250)
+				file.close("led.lua")
 				print("do_not_execute_pin is pushed")
 				continue_execution = false
 			end
