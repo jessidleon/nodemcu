@@ -33,8 +33,8 @@ tmr.create():alarm(15000, tmr.ALARM_AUTO, function(t)
     allowed_to_write = true
 end)
 
- --local tmr_tmp = tmr.create()
- --tmr_tmp:register(100, tmr.ALARM_AUTO, function(t)
- --    received_data("$GPRMC,180152.00,A,4113.17156,N,00142.67346,E,0.807,275.57,270521,,,A*6B")
- --end)
- --tmr_tmp:start()
+--local tmr_tmp = tmr.create()
+--tmr_tmp:register(100, tmr.ALARM_AUTO, function(t)
+--    received_data("$GPRMC,180152.00,A,4113.17156,N,00142.67346,E,0.807,275.57,270521,,,A*6B")
+--end)
+--tmr_tmp:start()

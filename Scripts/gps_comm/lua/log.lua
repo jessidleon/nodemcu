@@ -17,7 +17,7 @@ end
 
 local function debug(message)
     file.open("data.txt", "a+")
-    file.writeline(message)
+    file.writeline("[DEBUG] " .. message)
     file.close()
 end
 

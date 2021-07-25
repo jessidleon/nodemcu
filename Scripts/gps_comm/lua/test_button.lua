@@ -2,7 +2,6 @@ local delete_pin = 3
 local do_not_execute_pin = 5
 local led_pin = 4
 continue_execution = true
-
 local function setup_pins()
 	gpio.mode(delete_pin, gpio.INPUT)
 	gpio.mode(do_not_execute_pin, gpio.INPUT)
