@@ -2,7 +2,7 @@ local allowed_to_write = true
 
 local function received_data(data)
     local position = {string.find(data, "$GPRMC")}
-    if position[1] ~= nil then
+    if position[1] ~= nil and position[2] == "A" then
         if allowed_to_write then
             allowed_to_write = false
 
