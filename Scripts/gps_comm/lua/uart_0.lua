@@ -1,8 +1,29 @@
 local allowed_to_write = true
 
+local function debug(msg)
+    dofile("log.lua").debug(msg)
+    file.close("log.lua")
+end
+
+local function split (string, sep)
+    if sep == nil then
+        sep = "%s"
+    end
+
+    local split_string = {}
+    for str in string.gmatch(string, "([^"..sep.."]+)") do
+        table.insert(split_string, str)
+    end
+    return split_string
+end
+
 local function received_data(data)
     local position = {string.find(data, "$GPRMC")}
-    if position[1] ~= nil and position[2] == "A" then
+    if position[1] ~= nil then
+        split_data = split(data, ",")
+        if split_data[3] ~= "A" then
+            return
+        end
         if allowed_to_write then
             allowed_to_write = false
 

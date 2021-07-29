@@ -16,7 +16,7 @@ local function log(data, position)
 end
 
 local function debug(message)
-    file.open("data.txt", "a+")
+    file.open("debug.txt", "a+")
     file.writeline("[DEBUG] " .. message)
     file.close()
 end
